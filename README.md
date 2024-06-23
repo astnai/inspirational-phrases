@@ -13,4 +13,4 @@ inspiro-quote is a simple inspirational quotes generator built with Astro.
 3. Open `index.html` in your preferred browser.
 
 ## Usage
-Load the page to receive a new inspirational quote with each refresh.
+Press the button to generate a new phrase.

@@ -4,15 +4,15 @@ import { quotes } from '../data/quotes.js';
 const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
 ---
 
-<div class="flex items-center justify-center h-screen bg-[#fcfcfc] text-gray-900">
+<div class="flex items-center justify-center h-screen">
   <div class="flex flex-col items-center p-6 max-w-4xl mx-auto bg-white rounded-xl shadow-md space-y-4">
     <div id="quote-box" class="text-center transition-opacity duration-500 ease-in-out opacity-100">
-      <p id="quote-text" class="text-xl font-semibold">Click the button to get inspired!</p>
-      <a id="quote-author" class="block mt-2 text-gray-600 underline" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <p id="quote-text" class="text-xl font-semibold text-gray-800">click the button to get inspired!</p>
+      <a id="quote-author" class="block mt-2 text-gray-600 underline transition-colors duration-300 ease-in-out hover:text-gray-900" href="#" target="_blank" rel="noopener noreferrer"></a>
     </div>
     <div class="flex-shrink-0 text-center">
-      <button id="new-quote-btn" class="px-4 py-2 bg-gray-300 text-gray-900 rounded hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-300 ease-in-out">
-        Generate New Quote
+      <button id="new-quote-btn" class="px-4 py-2 bg-gray-300 text-gray-900 rounded hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-300 ease-in-out touch-manipulation">
+        generate new quote
       </button>
     </div>
   </div>
@@ -152,5 +152,10 @@ const getRandomQuote = () => quotes[Math.floor(Math.random() * quotes.length)];
       authorElement.href = newQuote.link;
       quoteBox.style.opacity = 1;
     }, 500);
+  });
+
+  document.getElementById('new-quote-btn').addEventListener('touchend', () => {
+    const btn = document.getElementById('new-quote-btn');
+    btn.classList.remove('hover:bg-gray-400');
   });
 </script>
